@@ -3,8 +3,30 @@
 @{
 }
 
-@foreach (var item in Model.JobList)
+@if (Model.JobList != null && Model.JobList.Any())
 {
-    <p>@item.Titel</p>
-    <p>@item.Kategori</p>
+    <h1 class="display-3 mb-5">Studie Jobs</h1>
+
+    <div class="container">
+        <div class="row">
+            @foreach (var job in Model.JobList)
+            {
+                <div class="col-md-4 p-3">
+                    <div class="card shadow" style="width: 18rem;">
+                        <div class="card-body d-flex flex-column">
+                            <h3 class="card-title">@job.Titel</h3>
+                            <h4 class="card-info">@job.Beskrivelse</h4>
+                            <h5>@job.Deadline</h5>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
 }
+else
+{
+    <p>Ingen jobs tilgængelige på nuværende tidspunkt.</p>
+}
+
+
