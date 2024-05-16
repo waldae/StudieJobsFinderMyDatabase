@@ -1,0 +1,29 @@
+﻿@page
+@model StudieJobsFinderMyDatabase.Pages.Jobsøgning.SøgningModel
+@{
+    ViewData["Title"] = "Job Search";
+}
+
+<h1>Job Search</h1>
+
+@*
+
+*@
+
+<form method="post"> 
+    <div class="form-group mb-3">
+        <label asp-for="@Model.Input" class=" control-label fw-bold fs-5"></label>
+        <input asp-for="@Model.Input" class="form-control" />
+    </div>
+<p>
+    <div class=" form-group mb-0-3">
+        <input type="submit" asp-page-handler="JobSearch" value="Søgning" class="btn btn-outline-primary"/>
+    </div>
+</form>
+
+<div>
+    @foreach (var job in Model.JobList)
+    {
+        <p>@job.Titel</p>
+    }
+</div>
