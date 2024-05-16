@@ -1,0 +1,9 @@
+﻿@page
+@model StudieJobsFinderMyDatabase.Pages.Jobs.GetAllModel
+@{
+}
+
+@foreach (var item in Model.JobList)
+{
+    <p>@item.Titel</p>
+}
