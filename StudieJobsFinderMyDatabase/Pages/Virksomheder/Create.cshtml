@@ -1,0 +1,67 @@
+﻿@page
+@model StudieJobsFinderMyDatabase.Pages.Virksomheder.CreateModel
+@{
+    ViewData["Title"] = "Create Virksomhed";
+}
+
+<h1>Create Virksomhed</h1>
+
+<h4>Virksomhed</h4>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="Virksomhed.VirksomhedsNavn" class="control-label"></label>
+                <input asp-for="Virksomhed.VirksomhedsNavn" class="form-control" />
+                <span asp-validation-for="Virksomhed.VirksomhedsNavn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Virksomhed.Branche" class="control-label"></label>
+                <input asp-for="Virksomhed.Branche" class="form-control" />
+                <span asp-validation-for="Virksomhed.Branche" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Virksomhed.HovedkvarterAdresse" class="control-label"></label>
+                <input asp-for="Virksomhed.HovedkvarterAdresse" class="form-control" />
+                <span asp-validation-for="Virksomhed.HovedkvarterAdresse" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Virksomhed.ByNavn" class="control-label"></label>
+                <input asp-for="Virksomhed.ByNavn" class="form-control" />
+                <span asp-validation-for="Virksomhed.ByNavn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Virksomhed.Land" class="control-label"></label>
+                <input asp-for="Virksomhed.Land" class="form-control" />
+                <span asp-validation-for="Virksomhed.Land" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Virksomhed.Email" class="control-label"></label>
+                <input asp-for="Virksomhed.Email" class="form-control" />
+                <span asp-validation-for="Virksomhed.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Virksomhed.Telefonnummer" class="control-label"></label>
+                <input asp-for="Virksomhed.Telefonnummer" class="form-control" />
+                <span asp-validation-for="Virksomhed.Telefonnummer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Virksomhed.Hjemmeside" class="control-label"></label>
+                <input asp-for="Virksomhed.Hjemmeside" class="form-control" />
+                <span asp-validation-for="Virksomhed.Hjemmeside" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
