@@ -22,8 +22,40 @@
 </form>
 
 <div>
-    @foreach (var job in Model.JobList)
+    @foreach (var job in Model.Jobs)
     {
         <p>@job.Titel</p>
     }
 </div>
+
+
+<h1>Jobsøgning</h1>
+
+@if (Model.Jobs != null && Model.Jobs.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Titel</th>
+                <th>Beskrivelse</th>
+                <th>Kategori</th>
+                <th>Lokation</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var job in Model.Jobs)
+            {
+                <tr>
+                    <td>@job.Titel</td>
+                    <td>@job.Beskrivelse</td>
+                    <td>@job.Kategori</td>
+                    <td>@job.Lokation</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else if (Model.Jobs != null)
+{
+    <p>Ingen job fundet.</p>
+}
