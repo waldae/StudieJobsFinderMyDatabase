@@ -6,13 +6,15 @@
     <title>@ViewData["Title"] - StudieJobFinder</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/StudieJobsFinderMyDatabase.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/StudieJobsFinder.styles.css" asp-append-version="true" />
+
+    .
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light .bg-fare border-bottom box-shadow mb-3" style="background-color: #b41018">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">StudieJobsFinderMyDatabase</a>
+                <a class="navbar-brand text-light" asp-area="" asp-page="/Index">StudDex</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -20,31 +22,29 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                            <a class="nav-link text-light" asp-area="" asp-page="/Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/LogIn/LogIn">Log Ind Som Studerende</a>
+                            <a class="nav-link text-light" asp-area="" asp-page="/LogIn/LogIn">Log Ind Som Studerende</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/LogIn/LogIn">Log Ind Som Virksomhed</a>
+                            <a class="nav-link text-light" asp-area="" asp-page="/LogIn/LogIn">Log Ind Som Virksomhed</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
-                        <li class="nav-item">
+                      
+                      @*   <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Jobs/GetAll">Jobs</a>
+                        </li> *@
+                        <li class="nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-page="/Jobsøgning/Søgning">Søg efter job</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Jobsøgning/Søgning">Søg efter job</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Jobs/Create">Opret Jobopslag</a>
+                            <a class="nav-link text-light" asp-area="" asp-page="/Jobs/Create">Opret Jobopslag</a>
                         </li>
                     </ul>
-                    
-                     <form class="form-inline my-2 my-lg-0" method="get" asp-page="/Jobs/GetAll">Jobs<a>
-                        <input class="form-control mr-sm-2" type="search" placeholder="Søg" aria-label="Søg" name="searchInput" />
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Søg</button>
+
+                    <form class="form-inline my-2 my-lg-0" method="get" asp-page="/Jobsøgning/Søgning">
+                        <input class="form-control mr-sm-2 mb-3" type="search" placeholder="" aria-label="Søg" name="searchInput" />
+                        <button class="btn btn-success my-2 my-sm-0" type="submit">Søg</button>
                       </form> 
 
                     </div>
