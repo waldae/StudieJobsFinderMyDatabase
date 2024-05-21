@@ -1,0 +1,37 @@
+﻿@page
+@model StudieJobsFinderMyDatabase.Pages.Jobs.CreateModel
+@{
+    ViewData["Title"] = "Opret Jobopslag";
+}
+
+<h1>Opret Jobopslag</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label asp-for="Job.Titel" class="control-label"></label>
+        <input asp-for="Job.Titel" class="form-control" />
+        <span asp-validation-for="Job.Titel" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Job.Beskrivelse" class="control-label"></label>
+        <textarea asp-for="Job.Beskrivelse" class="form-control"></textarea>
+        <span asp-validation-for="Job.Beskrivelse" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Job.Deadline" class="control-label"></label>
+        <input asp-for="Job.Deadline" class="form-control" type="date" />
+        <span asp-validation-for="Job.Deadline" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Job.VirksomhedsId" class="control-label"></label>
+        <input asp-for="Job.VirksomhedsId" class="form-control" />
+        <span asp-validation-for="Job.VirksomhedsId" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Opret" class="btn btn-primary" />
+    </div>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
