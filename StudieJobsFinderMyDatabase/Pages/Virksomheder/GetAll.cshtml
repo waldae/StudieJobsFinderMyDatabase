@@ -1,0 +1,41 @@
+﻿@page
+@model StudieJobsFinderMyDatabase.Pages.Virksomheder.GetAllModel
+@{
+    ViewData["Title"] = "Virksomheder";
+}
+
+<h1>Virksomheder</h1>
+
+<p>
+    <a class="btn btn-primary" asp-page="./Create" target="_blank">Create New Virksomhed</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>VirksomhedsNavn</th>
+            <th>Branche</th>
+            <th>HovedkvarterAdresse</th>
+            <th>ByNavn</th>
+            <th>Land</th>
+            <th>Email</th>
+            <th>Telefonnummer</th>
+            <th>Hjemmeside</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var virksomhed in Model.Virksomheder)
+        {
+            <tr>
+                <td>@virksomhed.VirksomhedsNavn</td>
+                <td>@virksomhed.Branche</td>
+                <td>@virksomhed.HovedkvarterAdresse</td>
+                <td>@virksomhed.ByNavn</td>
+                <td>@virksomhed.Land</td>
+                <td>@virksomhed.Email</td>
+                <td>@virksomhed.Telefonnummer</td>
+                <td>@virksomhed.Hjemmeside</td>
+            </tr>
+        }
+    </tbody>
+</table>
