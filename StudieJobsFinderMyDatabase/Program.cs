@@ -1,4 +1,6 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using StudieJobsFinderMyDatabase.Models;
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,3 +32,9 @@ app.UseAuthorization();
 app.MapRazorPages();
 
 app.Run();
+
+
+
+
+
+

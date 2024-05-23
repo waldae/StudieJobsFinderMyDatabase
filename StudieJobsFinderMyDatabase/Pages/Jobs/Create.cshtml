@@ -18,6 +18,11 @@
         <span asp-validation-for="Job.Beskrivelse" class="text-danger"></span>
     </div>
     <div class="form-group">
+        <label asp-for="Job.Kategori" class="control-label"></label>
+        <textarea asp-for="Job.Kategori" class="form-control"></textarea>
+        <span asp-validation-for="Job.Kategori" class="text-danger"></span>
+    </div>
+    <div class="form-group">
         <label asp-for="Job.Deadline" class="control-label"></label>
         <input asp-for="Job.Deadline" class="form-control" type="date" />
         <span asp-validation-for="Job.Deadline" class="text-danger"></span>
