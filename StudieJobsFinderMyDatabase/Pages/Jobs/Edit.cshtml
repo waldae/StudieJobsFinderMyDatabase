@@ -1,61 +1,70 @@
-﻿@page
-@model StudieJobsFinderMyDatabase.Pages.Jobs.CreateModel
+﻿@page "{id:int}"
+@model StudieJobsFinderMyDatabase.Pages.Jobs.EditModel
 @{
-    ViewData["Title"] = "Opret jobopslag";
+    ViewData["Title"] = "Rediger jobopslag";
 }
 
-<h1>Opret jobopslag</h1>
+<h2>Rediger jobopslag</h2>
 
 <form method="post">
+    <input type="hidden" asp-for="Job.JobId" />
+
     <div class="form-group">
         <label asp-for="Job.Titel" class="control-label"></label>
         <input asp-for="Job.Titel" class="form-control" />
         <span asp-validation-for="Job.Titel" class="text-danger"></span>
     </div>
+
     <div class="form-group">
         <label asp-for="Job.Beskrivelse" class="control-label"></label>
         <textarea asp-for="Job.Beskrivelse" class="form-control"></textarea>
         <span asp-validation-for="Job.Beskrivelse" class="text-danger"></span>
     </div>
+
     <div class="form-group">
-
-        <label asp-for="Job.Kategori" class="control-label"></label>
-        <textarea asp-for="Job.Kategori" class="form-control"></textarea>
-        <span asp-validation-for="Job.Kategori" class="text-danger"></span>
-
         <label asp-for="Job.OffentliggørelsesDato" class="control-label"></label>
-        <input asp-for="Job.OffentliggørelsesDato" class="form-control" type="date" />
+        <input asp-for="Job.OffentliggørelsesDato" class="form-control" />
         <span asp-validation-for="Job.OffentliggørelsesDato" class="text-danger"></span>
-
     </div>
+
     <div class="form-group">
         <label asp-for="Job.Deadline" class="control-label"></label>
-        <input asp-for="Job.Deadline" class="form-control" type="date" />
+        <input asp-for="Job.Deadline" class="form-control" />
         <span asp-validation-for="Job.Deadline" class="text-danger"></span>
     </div>
+
+    <div class="form-group">
+        <label asp-for="Job.VirksomhedsId" class="control-label"></label>
+        <input asp-for="Job.VirksomhedsId" class="form-control" />
+        <span asp-validation-for="Job.VirksomhedsId" class="text-danger"></span>
+    </div>
+
     <div class="form-group">
         <label asp-for="Job.Lokation" class="control-label"></label>
         <input asp-for="Job.Lokation" class="form-control" />
         <span asp-validation-for="Job.Lokation" class="text-danger"></span>
     </div>
+
     <div class="form-group">
         <label asp-for="Job.Løn" class="control-label"></label>
-        <input asp-for="Job.Løn" class="form-control" type="number" step="0.01" />
+        <input asp-for="Job.Løn" class="form-control" />
         <span asp-validation-for="Job.Løn" class="text-danger"></span>
     </div>
+
     <div class="form-group">
         <label asp-for="Job.Kompetencer" class="control-label"></label>
         <textarea asp-for="Job.Kompetencer" class="form-control"></textarea>
         <span asp-validation-for="Job.Kompetencer" class="text-danger"></span>
     </div>
+
     <div class="form-group">
         <label asp-for="Job.Kategori" class="control-label"></label>
         <input asp-for="Job.Kategori" class="form-control" />
         <span asp-validation-for="Job.Kategori" class="text-danger"></span>
     </div>
-    <div class="form-group">
-        <input type="submit" value="Opret" class="btn btn-primary" />
-    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a asp-page="./Index" class="btn btn-secondary">Cancel</a>
 </form>
 
 @section Scripts {
@@ -63,4 +72,3 @@
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 }
-

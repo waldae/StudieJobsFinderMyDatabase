@@ -1,10 +1,10 @@
 ﻿@page
 @model StudieJobsFinderMyDatabase.Pages.Virksomheder.CreateModel
 @{
-    ViewData["Title"] = "Create Virksomhed";
+    ViewData["Title"] = "Opret Virksomhed";
 }
 
-<h1>Create Virksomhed</h1>
+<h1>Opret Virksomhed</h1>
 
 <h4>Virksomhed</h4>
 <hr />
@@ -52,14 +52,10 @@
                 <span asp-validation-for="Virksomhed.Hjemmeside" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Opret" class="btn btn-primary" />
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-page="./Index">Back to List</a>
 </div>
 
 @section Scripts {
