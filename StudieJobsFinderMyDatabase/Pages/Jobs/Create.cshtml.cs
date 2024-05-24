@@ -30,7 +30,11 @@ namespace StudieJobsFinderMyDatabase.Pages.Jobs
                 return Page();
             }
 
+            int nextId = _context.Jobs.ToList().Select(j => j.JobId).DefaultIfEmpty(0).Max() + 1;
+            Job.JobId = nextId;
+
             _context.Jobs.Add(Job);
+
             await _context.SaveChangesAsync(); // Save changes to the database
 
             return RedirectToPage();

@@ -44,6 +44,7 @@ public partial class Job
 
     [StringLength(50)]
     [Unicode(false)]
+    [Required]
     public string Kategori { get; set; }
 
     [ForeignKey("VirksomhedsId")]

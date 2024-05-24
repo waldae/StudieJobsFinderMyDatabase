@@ -1,10 +1,10 @@
 ﻿@page
 @model StudieJobsFinderMyDatabase.Pages.Jobsøgning.SøgningModel
 @{
-    ViewData["Title"] = "Job Search";
+    ViewData["Title"] = "";
 }
 
-<h1>Job Search</h1>
+<h1></h1>
 
 @*
 
@@ -17,19 +17,13 @@
     </div>
 <p>
     <div class=" form-group mb-0-3">
-        <input type="submit" asp-page-handler="JobSearch" value="Søgning" class="btn btn-outline-primary"/>
+        <input type="submit" asp-page-handler="JobSearch" value="Søg" class="btn btn-outline-primary"/>
     </div>
 </form>
-
-<div>
-    @foreach (var job in Model.Jobs)
-    {
-        <p>@job.Titel</p>
-    }
-</div>
+<img class="background" src="/lib/images/Diffrente.jpg" />
 
 
-<h1>Jobsøgning</h1>
+<h1>Ledige Arbejdspladser</h1>
 
 @if (Model.Jobs != null && Model.Jobs.Any())
 {
