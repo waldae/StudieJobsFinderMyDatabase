@@ -13,6 +13,7 @@ public partial class Job
 {
     [Key]
     [Column("JobID")]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int JobId { get; set; }
 
     [StringLength(100)]
