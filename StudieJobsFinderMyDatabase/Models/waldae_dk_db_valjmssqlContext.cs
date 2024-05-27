@@ -33,7 +33,7 @@ public partial class waldae_dk_db_valjmssqlContext : DbContext
         {
             entity.HasKey(e => e.JobId).HasName("PK__Job__056690E28CE19861");
 
-            entity.Property(e => e.JobId).ValueGeneratedNever();
+            // entity.Property(e => e.JobId).ValueGeneratedNever();
 
             entity.HasOne(d => d.Virksomheds).WithMany(p => p.Jobs).HasConstraintName("FK__Job__Kategori__286302EC");
         });

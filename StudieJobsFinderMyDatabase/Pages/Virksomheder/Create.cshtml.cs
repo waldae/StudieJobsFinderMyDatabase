@@ -28,7 +28,11 @@ namespace StudieJobsFinderMyDatabase.Pages.Virksomheder
                 return Page();
             }
 
+            int nextId = _context.Virksomheds.ToList().Select(v => v.VirksomhedsId).DefaultIfEmpty(0).Max() + 1;
+            Virksomhed.VirksomhedsId = nextId;
+
             _context.Virksomheds.Add(Virksomhed);
+
             await _context.SaveChangesAsync(); // Save changes to the database
 
             return RedirectToPage();

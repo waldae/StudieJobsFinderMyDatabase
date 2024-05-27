@@ -34,6 +34,7 @@
                 <th>Beskrivelse</th>
                 <th>Kategori</th>
                 <th>Lokation</th>
+                <th>Rediger</th>
             </tr>
         </thead>
         <tbody>
@@ -44,6 +45,7 @@
                     <td>@job.Beskrivelse</td>
                     <td>@job.Kategori</td>
                     <td>@job.Lokation</td>
+                    <td><a class="btn btn-outline-primary btn-sm" type="button" title="Edit" asp-page="/Jobs/Edit" asp-route-id="@job.JobId">Rediger</a></td>
                 </tr>
             }
         </tbody>
