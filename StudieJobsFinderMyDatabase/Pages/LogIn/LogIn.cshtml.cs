@@ -1,14 +1,23 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using StudieJobsFinderMyDatabase.Models;
+using System.Linq;
 
 public class LogInModel : PageModel
 {
-    [BindProperty]
-    public User Input { get; set; }
+    private readonly waldae_dk_db_valjmssqlContext _context;
 
-    public void OnGet()
+    [BindProperty]
+    public Bruger Input { get; set; }
+
+    public LogInModel(waldae_dk_db_valjmssqlContext context)
     {
-        // Intet behøver at gøres ved GET-anmodninger
+        _context = context;
+    }
+
+    public IActionResult OnGet()
+    {
+        return Page();
     }
 
     public IActionResult OnPost()
@@ -16,7 +25,8 @@ public class LogInModel : PageModel
         if (ModelState.IsValid)
         {
             // Simpel logik til at validere brugernavn og adgangskode
-            if (Input.Username == "admin" && Input.Password == "password")
+            var bruger = _context.Brugers.FirstOrDefault(u => u.Brugernavn == Input.Brugernavn && u.Adgangskode == Input.Adgangskode);
+            if (bruger != null)
             {
                 // Brugerne er korrekt
                 // Her kan du udføre yderligere handlinger, f.eks. logge dem ind

@@ -11,11 +11,6 @@ namespace StudieJobsFinderMyDatabase.Models;
 [Table("Job")]
 public partial class Job
 {
-    [Key]
-    [Column("JobID")]
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public int JobId { get; set; }
-
     [StringLength(100)]
     [Unicode(false)]
     public string Titel { get; set; }
@@ -44,8 +39,10 @@ public partial class Job
 
     [StringLength(50)]
     [Unicode(false)]
-    [Required]
     public string Kategori { get; set; }
+
+    [Key]
+    public int JobId { get; set; }
 
     [ForeignKey("VirksomhedsId")]
     [InverseProperty("Jobs")]
