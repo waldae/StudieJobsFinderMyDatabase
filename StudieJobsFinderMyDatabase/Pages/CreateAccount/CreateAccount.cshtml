@@ -1,10 +1,10 @@
 ﻿@page
-@model LogInModel
+@model CreateAccountModel
 @{
-    ViewData["Title"] = "Log Ind";
+    ViewData["Title"] = "Create Account";
 }
 
-<h2>Log ind som studerende</h2>
+<h2>Opret konto som studerende</h2>
 
 @if (ViewData.ModelState.Any(m => m.Key == string.Empty))
 {
@@ -33,11 +33,11 @@
         <input type="password" class="form-control" id="adgangskode" asp-for="Input.Adgangskode" required>
         <span asp-validation-for="Input.Adgangskode" class="text-danger"></span>
     </div>
-    <button type="submit" class="btn btn-primary">Log Ind</button>
+    <button type="submit" class="btn btn-primary">Create Account</button>
 </form>
 
 
-<h2>Log ind som virksomhed</h2>
+<h2>Opret konto som virksomhed</h2>
 
 @if (ViewData.ModelState.Any(m => m.Key == string.Empty))
 {
@@ -66,5 +66,5 @@
         <input type="password" class="form-control" id="adgangskode" asp-for="Input.Adgangskode" required>
         <span asp-validation-for="Input.Adgangskode" class="text-danger"></span>
     </div>
-    <button type="submit" class="btn btn-primary">Log Ind</button>
+    <button type="submit" class="btn btn-primary">Create Account</button>
 </form>
