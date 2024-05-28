@@ -24,7 +24,6 @@ public class CreateAccountModel : PageModel
     {
         if (ModelState.IsValid)
         {
-            // Tjek om brugernavnet allerede eksisterer
             var usernameExists = _context.Brugers.Any(u => u.Brugernavn == Input.Brugernavn);
             if (usernameExists)
             {
@@ -32,14 +31,13 @@ public class CreateAccountModel : PageModel
                 return Page();
             }
 
-            // Opret brugeren
             _context.Brugers.Add(Input);
             _context.SaveChanges();
 
-            return RedirectToPage("/Index"); // Omdiriger til hjemmesiden efter oprettelse af konto
+            return RedirectToPage("/Index");
         }
 
-        // Model er ugyldig, vis formularsiden igen med fejlmeddelelser
+        
         return Page();
     }
 }

@@ -24,18 +24,15 @@ public class LogInModel : PageModel
     {
         if (ModelState.IsValid)
         {
-            // Simpel logik til at validere brugernavn og adgangskode
+            
             var bruger = _context.Brugers.FirstOrDefault(u => u.Brugernavn == Input.Brugernavn && u.Adgangskode == Input.Adgangskode);
             if (bruger != null)
             {
-                // Brugerne er korrekt
-                // Her kan du udføre yderligere handlinger, f.eks. logge dem ind
-                return RedirectToPage("/Index"); // Omdiriger til hjemmesiden
+                return RedirectToPage("/Index");
             }
         }
 
-        // Forkert brugernavn eller adgangskode, eller model er ugyldig
-        // Vis log ind-siden igen med en fejlmeddelelse
+        
         ModelState.AddModelError(string.Empty, "Forkert brugernavn eller adgangskode.");
         return Page();
     }

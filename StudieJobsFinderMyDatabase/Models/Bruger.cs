@@ -10,7 +10,7 @@ namespace StudieJobsFinderMyDatabase.Models
     {
         [Key]
         [Column("BrugerID")]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)] // Tilføjet denne linje
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int BrugerId { get; set; }
 
         [StringLength(50)]
