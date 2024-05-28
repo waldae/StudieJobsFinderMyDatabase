@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using StudieJobsFinderMyDatabase.Models;  // Juster namespace
+using StudieJobsFinderMyDatabase.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
