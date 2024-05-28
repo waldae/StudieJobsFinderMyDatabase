@@ -55,7 +55,7 @@ namespace StudieJobsFinderMyDatabase.Pages.Jobs
                 s => s.Titel, s => s.Beskrivelse, s => s.OffentliggørelsesDato, s => s.Deadline, s => s.Lokation, s => s.Løn, s => s.Kompetencer, s => s.Kategori))
             {
                 await _context.SaveChangesAsync();
-                return RedirectToPage("./Index");
+                return RedirectToPage("/Jobsøgning/Søgning");
             }
 
             return Page();
